@@ -4,7 +4,7 @@
     {
         CalcGez();
     }
-
+    // Вроде бы это RSA
     public static void CalcG()
     {
         double g = 2, p = 37, res = 0;

@@ -1,4 +1,6 @@
-﻿static class Pages
+﻿using tui_netcore;
+
+static class Pages
 {
     static string[] mainMenuItems = new string[]
     {
@@ -71,6 +73,17 @@
                 break;
         }
     }
+    public static void MainMenuTUI()
+    {
+        Tui window = new Tui();
+        window.Title = "Главное меню";
+        List<string> items = mainMenuItems.ToList();
+        string selectedLine = window.DrawList(mainMenuItems.ToList());
+
+        Console.Clear();
+        Console.WriteLine(selectedLine);
+        Console.ReadLine();
+    }
     static void EncryptionMethodSelectionMenu()
     {
         Console.Clear();//очистка экрана перед работой
@@ -127,7 +140,7 @@
     }
 
     //vvv--- Шифры в один метод ---vvv
-    static void ADFGVXCipher()
+    static void ADFGVXCipher() //TODO переработать
     {
         string[,] replaceTable = new string[7, 7];
         string alph = "МНЛФХЦЧШТОПРСУЭЮЯДЕЁЖАБВГЗИЙКЩЪЫЬ---"; //TODO Прикрутить рандомизацию алфавита
@@ -736,9 +749,9 @@
         }
         return numResult;
     }
-    static decimal CalcK(int roundNum, int iteratNum)
+    static decimal CalcK(int roundNum, int iteratNum)//заглушка
     {
-
+        return 0;
     }
     /// <summary>
     /// Возвращает перевёрнутую строку

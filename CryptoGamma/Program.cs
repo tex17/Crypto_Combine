@@ -6,7 +6,8 @@
 
         while (input != "q")
         {
-            Pages.MainMenu();
+            //Pages.MainMenu();
+            Pages.MainMenuTUI();
         }
     }
 }
